@@ -52,6 +52,11 @@ public class YourActivity extends AppCompatActivity implements YourActivityMvp.V
     }
     
     @Override public void viewMethod(){...}
+    
+    @Override protected void onDestroy() {
+        super.onDestroy();
+        presenter.onDestroy(); 
+    }
 }
 ```
 
