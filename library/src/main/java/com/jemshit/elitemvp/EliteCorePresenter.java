@@ -15,7 +15,7 @@
  *
  */
 
-package com.jemshit.library;
+package com.jemshit.elitemvp;
 
 import android.support.annotation.UiThread;
 

@@ -15,17 +15,18 @@
  *
  */
 
-package com.jemshit.elitemvp.activity_1_basic.mvp;
+package com.jemshit.elitemvpsample.activity_2_custom_presenter.mvp;
 
-import com.jemshit.library.ElitePresenter;
-import com.jemshit.library.EliteView;
+import com.jemshit.elitemvp.EliteCorePresenter;
+import com.jemshit.elitemvp.EliteView;
 
-public interface ActivityOneMvp {
-    interface View extends EliteView{
+public interface ActivityTwoMvp {
+    interface View extends EliteView {
         void showSum(String sum);
     }
 
-    abstract class Presenter extends ElitePresenter<ActivityOneMvp.View> {
+    abstract class Presenter implements EliteCorePresenter<ActivityTwoMvp.View> {
         public abstract void calculateSum(int input1, int input2);
+        public abstract void onDestroy();   // Custom onDestroy() now
     }
 }

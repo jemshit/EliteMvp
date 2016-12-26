@@ -15,36 +15,23 @@
  *
  */
 
-package com.jemshit.elitemvp.activity_2_custom_presenter.mvp;
+package com.jemshit.elitemvpsample.activity_1_basic.mvp;
 
-public class ActivityTwoPresenter extends ActivityTwoMvp.Presenter{
-    private ActivityTwoMvp.View view;
+public class ActivityOnePresenter extends ActivityOneMvp.Presenter{
 
     // Constructor if needed
-    public ActivityTwoPresenter(){
+    public ActivityOnePresenter(){
+        super.onCreate();   // You can also call this from Activity.onCreate()
     }
 
-    // Custom attachView(), obligatory to write custom attachView logic now
-    @Override
-    public void attachView(ActivityTwoMvp.View view) {
-        this.view=view;
+    @Override public void calculateSum(int input1, int input2) {
+        if(isViewAttached())    // Check if View is attached
+            getView().showSum(String.valueOf(input1+input2));
     }
 
-    // Custom detachView(), obligatory to write custom detachView logic now
-    @Override
-    public void detachView() {
-        view=null;
-    }
-
-    @Override
-    public void calculateSum(int input1, int input2) {
-        if(view!=null)    // Check if View is attached
-            view.showSum(String.valueOf(input1+input2));
-    }
-
-    // Custom onDestroy
     @Override
     public void onDestroy() {
+        super.onDestroy();
         // Clear your references, close your instances if needed ...
     }
 }

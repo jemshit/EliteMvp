@@ -15,7 +15,7 @@
  *
  */
 
-package com.jemshit.elitemvp.activity_3_rx_subscription.mvp;
+package com.jemshit.elitemvpsample.activity_3_rx_subscription.mvp;
 
 import java.util.ArrayList;
 import java.util.List;

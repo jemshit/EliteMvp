@@ -15,17 +15,7 @@
  *
  */
 
-package com.jemshit.elitemvp.activity_3_rx_subscription.mvp;
+package com.jemshit.elitemvp;
 
-import com.jemshit.library.ElitePresenter;
-import com.jemshit.library.EliteView;
-
-public interface ActivityThreeMvp {
-    interface View extends EliteView {
-        void showList(String item);
-    }
-
-    abstract class Presenter extends ElitePresenter<ActivityThreeMvp.View> {
-        public abstract void createList();
-    }
+public interface EliteView {
 }

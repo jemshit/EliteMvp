@@ -15,7 +15,7 @@
  *
  */
 
-package com.jemshit.elitemvp.activity_3_rx_subscription;
+package com.jemshit.elitemvpsample.activity_3_rx_subscription;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -24,9 +24,9 @@ import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 import android.widget.TextView;
 
-import com.jemshit.elitemvp.R;
-import com.jemshit.elitemvp.activity_3_rx_subscription.mvp.ActivityThreeMvp;
-import com.jemshit.elitemvp.activity_3_rx_subscription.mvp.ActivityThreePresenter;
+import com.jemshit.elitemvpsample.R;
+import com.jemshit.elitemvpsample.activity_3_rx_subscription.mvp.ActivityThreeMvp;
+import com.jemshit.elitemvpsample.activity_3_rx_subscription.mvp.ActivityThreePresenter;
 
 public class ActivityThree extends AppCompatActivity implements ActivityThreeMvp.View {
     //region Resources

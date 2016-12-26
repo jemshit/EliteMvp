@@ -15,7 +15,7 @@
  *
  */
 
-package com.jemshit.elitemvp.activity_1_basic;
+package com.jemshit.elitemvpsample.activity_2_custom_presenter;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,12 +26,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.jemshit.elitemvp.R;
-import com.jemshit.elitemvp.activity_1_basic.mvp.ActivityOneMvp;
-import com.jemshit.elitemvp.activity_1_basic.mvp.ActivityOnePresenter;
-import com.jemshit.elitemvp.activity_2_custom_presenter.ActivityTwo;
 
-public class ActivityOne extends AppCompatActivity implements ActivityOneMvp.View {
+import com.jemshit.elitemvpsample.R;
+import com.jemshit.elitemvpsample.activity_2_custom_presenter.mvp.ActivityTwoMvp;
+import com.jemshit.elitemvpsample.activity_2_custom_presenter.mvp.ActivityTwoPresenter;
+import com.jemshit.elitemvpsample.activity_3_rx_subscription.ActivityThree;
+
+public class ActivityTwo extends AppCompatActivity implements ActivityTwoMvp.View {
     //region Resources
     private TextView textSum;
     private EditText input1;
@@ -41,21 +42,21 @@ public class ActivityOne extends AppCompatActivity implements ActivityOneMvp.Vie
     //endregion
 
     //region Variables
-    private ActivityOneMvp.Presenter presenter;
+    private ActivityTwoMvp.Presenter presenter;
     //endregion
 
     @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_one);
-        presenter = new ActivityOnePresenter();
+        setContentView(R.layout.activity_two);
+        presenter = new ActivityTwoPresenter();
         presenter.attachView(this);
 
         // FindViewByIds
-        textSum = (TextView) findViewById(R.id.textView_activityOne_sum);
-        input1 = (EditText) findViewById(R.id.editText_activityOne_input1);
-        input2 = (EditText) findViewById(R.id.editText_activityOne_input2);
-        buttonAdd = (AppCompatButton) findViewById(R.id.button_activityOne_add);
-        buttonNextActivity = (AppCompatButton) findViewById(R.id.button_activityOne_nextActivity);
+        textSum = (TextView) findViewById(R.id.textView_activityTwo_sum);
+        input1 = (EditText) findViewById(R.id.editText_activityTwo_input1);
+        input2 = (EditText) findViewById(R.id.editText_activityTwo_input2);
+        buttonAdd = (AppCompatButton) findViewById(R.id.button_activityTwo_add);
+        buttonNextActivity = (AppCompatButton) findViewById(R.id.button_activityTwo_nextActivity);
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {
@@ -64,13 +65,13 @@ public class ActivityOne extends AppCompatActivity implements ActivityOneMvp.Vie
                             Integer.valueOf(input2.getText().toString()));
                 } catch (NumberFormatException e) {
                     e.printStackTrace();
-                    Toast.makeText(ActivityOne.this, "Number Exception", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ActivityTwo.this, "Number Exception", Toast.LENGTH_SHORT).show();
                 }
             }
         });
         buttonNextActivity.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {
-                startActivity(new Intent(ActivityOne.this, ActivityTwo.class));
+                startActivity(new Intent(ActivityTwo.this, ActivityThree.class));
             }
         });
     }
@@ -81,6 +82,7 @@ public class ActivityOne extends AppCompatActivity implements ActivityOneMvp.Vie
 
     @Override protected void onDestroy() {
         super.onDestroy();
-        presenter.onDestroy();  // presenter.onDetach() is in presenter.onDestroy()
+        presenter.detachView();
+        presenter.onDestroy();
     }
 }

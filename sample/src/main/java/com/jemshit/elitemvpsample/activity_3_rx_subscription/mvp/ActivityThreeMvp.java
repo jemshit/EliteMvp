@@ -15,23 +15,17 @@
  *
  */
 
-package com.jemshit.elitemvp.activity_1_basic.mvp;
+package com.jemshit.elitemvpsample.activity_3_rx_subscription.mvp;
 
-public class ActivityOnePresenter extends ActivityOneMvp.Presenter{
+import com.jemshit.elitemvp.ElitePresenter;
+import com.jemshit.elitemvp.EliteView;
 
-    // Constructor if needed
-    public ActivityOnePresenter(){
-        super.onCreate();   // You can also call this from Activity.onCreate()
+public interface ActivityThreeMvp {
+    interface View extends EliteView {
+        void showList(String item);
     }
 
-    @Override public void calculateSum(int input1, int input2) {
-        if(isViewAttached())    // Check if View is attached
-            getView().showSum(String.valueOf(input1+input2));
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        // Clear your references, close your instances if needed ...
+    abstract class Presenter extends ElitePresenter<ActivityThreeMvp.View> {
+        public abstract void createList();
     }
 }
