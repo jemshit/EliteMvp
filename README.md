@@ -55,6 +55,7 @@ public class YourActivity extends AppCompatActivity implements YourActivityMvp.V
 }
 ```
 
+Check [sample](https://github.com/jemshit/EliteMvp/tree/master/sample) for more examples.
 
 ### Library Files
 There are total 3 Java classes in library.
