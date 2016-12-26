@@ -41,6 +41,8 @@ public class ActivityThree extends AppCompatActivity implements ActivityThreeMvp
     @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_three);
+        getSupportActionBar().setTitle("Activity3: Rx CompositeSubscription");
+
         presenter = new ActivityThreePresenter();
         presenter.attachView(this);
 

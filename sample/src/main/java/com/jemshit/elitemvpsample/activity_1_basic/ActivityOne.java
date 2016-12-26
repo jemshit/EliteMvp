@@ -48,6 +48,8 @@ public class ActivityOne extends AppCompatActivity implements ActivityOneMvp.Vie
     @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one);
+        getSupportActionBar().setTitle("Activity1: Basic");
+
         presenter = new ActivityOnePresenter();
         presenter.attachView(this);
 

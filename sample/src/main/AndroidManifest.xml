@@ -10,20 +10,17 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name="com.jemshit.elitemvpsample.activity_1_basic.ActivityOne"
-            android:label="Activity1: Basic">
+            android:name="com.jemshit.elitemvpsample.activity_1_basic.ActivityOne">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
-            android:name="com.jemshit.elitemvpsample.activity_2_custom_presenter.ActivityTwo"
-            android:label="Activity2: Custom Base Presenter">
+            android:name="com.jemshit.elitemvpsample.activity_2_custom_presenter.ActivityTwo">
         </activity>
         <activity
-            android:name="com.jemshit.elitemvpsample.activity_3_rx_subscription.ActivityThree"
-            android:label="Activity3: Rx CompositeSubscription">
+            android:name="com.jemshit.elitemvpsample.activity_3_rx_subscription.ActivityThree">
         </activity>
 
     </application>

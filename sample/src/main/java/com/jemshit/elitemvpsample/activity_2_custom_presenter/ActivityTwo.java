@@ -48,6 +48,8 @@ public class ActivityTwo extends AppCompatActivity implements ActivityTwoMvp.Vie
     @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two);
+        getSupportActionBar().setTitle("Activity2: Custom Base Presenter");
+
         presenter = new ActivityTwoPresenter();
         presenter.attachView(this);
 
