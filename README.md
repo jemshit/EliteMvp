@@ -63,7 +63,7 @@ public class YourActivity extends AppCompatActivity implements YourActivityMvp.V
 Check [sample](https://github.com/jemshit/EliteMvp/tree/master/sample) for more examples.
 
 ### Library Files
-There are total 3 Java classes in library.
+There are total 4 Java classes in library.
 
 1. **interface EliteView:** Base Empty *View* interface. You can extend this if you want to build your custom Base *View*
 2. **interface EliteCorePresenter:** Base *Presenter* interface with 2 methods, *void attachView(EliteView V)* and *void detachView()*
@@ -74,24 +74,27 @@ There are total 3 Java classes in library.
     -boolean isViewAttached(): //returns if 'EliteView' is attached
 ```
 
-It also contains two *CompositeSubscription* instances with different lifetimes:
+Other methods:
+```
+    -void onCreate(): // needs to be called manually
+
+    -void onDestroy():// needs to be called manually, internally it also calls 'detachView()'
+
+    -void attachView(EliteView V):// stores 'EliteView' instance in 'WeakReference<EliteView>'
+                                  // needs to be called manually
+
+    -void detachView(): // needs to be called manually or can be called through 'onDestroy()', removes 'EliteView' instance
+```
+
+4. **class EliteRxPresenter:** Complete Base *Presenter* class extends **ElitePresenter**.
+
+It contains two *CompositeSubscription* instances with different lifetimes:
 ```
     -CompositeSubscription subscriptionsAllLifetime: //lives between onCreate()-onDestroy()
     
     -CompositeSubscription subscriptionsAttachLifetime: //lives between onAttach(V)-onDetach()
 ```
 
-Other methods:
-```
-    -void onCreate(): // needs to be called manually, 'subscriptionsAllLifetime' is created here
-    
-    -void onDestroy():// needs to be called manually, internally it also calls 'detachView()', unsubscribes 'CompositeSubscription' instances
-    
-    -void attachView(EliteView V):// stores 'EliteView' instance in 'WeakReference<EliteView>'
-                                  // needs to be called manually, 'subscriptionsAttachLifetime' is created here
-    
-    -void detachView(): // needs to be called manually or can be called through 'onDestroy()', removes 'EliteView' instance
-```
 
 ### Installation
 
@@ -108,6 +111,6 @@ Step 2. Add the dependency to your module build.gradle file
 ```groovy
 dependencies {
     ...
-    compile 'com.jemshit.elitemvp:1.0.2'
+    compile 'com.jemshit.elitemvp:1.1.0'
 }
 ```

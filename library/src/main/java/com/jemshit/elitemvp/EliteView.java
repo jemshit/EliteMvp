@@ -17,5 +17,8 @@
 
 package com.jemshit.elitemvp;
 
+/**
+ * Base empty <b>view</b> class
+ */
 public interface EliteView {
 }
