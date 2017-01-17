@@ -10,6 +10,7 @@
         android:theme="@style/AppTheme">
 
         <activity
+            android:screenOrientation="portrait"
             android:name="com.jemshit.elitemvpsample.activity_1_basic.ActivityOne">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -17,9 +18,11 @@
             </intent-filter>
         </activity>
         <activity
+            android:screenOrientation="portrait"
             android:name="com.jemshit.elitemvpsample.activity_2_custom_presenter.ActivityTwo">
         </activity>
         <activity
+            android:screenOrientation="portrait"
             android:name="com.jemshit.elitemvpsample.activity_3_rx_subscription.ActivityThree">
         </activity>
 
