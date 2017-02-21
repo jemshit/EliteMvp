@@ -45,7 +45,7 @@ public class ElitePresenter<V extends EliteView> implements EliteCorePresenter<V
      */
     @UiThread
     @Override public void attachView(V view) {
-        viewRef = new WeakReference<V>(view);
+        viewRef = new WeakReference<>(view);
     }
 
     /**

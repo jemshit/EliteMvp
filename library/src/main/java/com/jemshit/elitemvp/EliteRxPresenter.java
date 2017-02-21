@@ -27,13 +27,14 @@ import rx.subscriptions.CompositeSubscription;
  * {@link #onCreate()} and {@link #onDestroy()}; second instance lives between {@link #attachView(EliteView view) attachView()} and
  * {@link #detachView()};
  */
+@SuppressWarnings("WeakerAccess")
 public class EliteRxPresenter<V extends EliteView> extends ElitePresenter<V> {
 
     protected CompositeSubscription subscriptionsAllLifetime;
     protected CompositeSubscription subscriptionsAttachLifetime;// Between onAttach-onDetach
 
     /**
-     * Creates <b>CompositeSubscription</b> that lives between {@link #onCreate()} and {@link #onDestroy()}.
+     * Creates <b>CompositeSubscription</b> that lives between onCreate() and {@link #onDestroy()}.
      */
     @Override public void onCreate() {
         super.onCreate();
@@ -41,7 +42,7 @@ public class EliteRxPresenter<V extends EliteView> extends ElitePresenter<V> {
     }
 
     /**
-     * Creates <b>CompositeSubscription</b> that lives between {@link #attachView(EliteView view) attachView()} and
+     * Creates <b>CompositeSubscription</b> that lives between attachView(EliteView) and
      * {@link #detachView()}.
      */
     @UiThread
@@ -52,7 +53,7 @@ public class EliteRxPresenter<V extends EliteView> extends ElitePresenter<V> {
 
     /**
      * Unsubscribes from <b>CompositeSubscription</b> that lives between {@link #attachView(EliteView view) attachView()} and
-     * {@link #detachView()}.
+     * detachView().
      */
     @UiThread
     @Override public void detachView() {
@@ -63,7 +64,7 @@ public class EliteRxPresenter<V extends EliteView> extends ElitePresenter<V> {
     }
 
     /**
-     * Unsubscribes from <b>CompositeSubscription</b> that lives between {@link #onCreate()} and {@link #onDestroy()}.
+     * Unsubscribes from <b>CompositeSubscription</b> that lives between {@link #onCreate()} and onDestroy().
      */
     @Override public void onDestroy() {
         if (subscriptionsAllLifetime != null && !subscriptionsAllLifetime.isUnsubscribed())

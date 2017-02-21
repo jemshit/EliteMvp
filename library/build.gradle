@@ -35,6 +35,8 @@ android {
             consumerProguardFiles 'proguard-rules.pro'
         }
     }
+
+    //noinspection GroovyMissingReturnStatement
     packagingOptions {
         exclude 'META-INF/**'
     }
