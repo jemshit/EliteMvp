@@ -58,7 +58,7 @@ public class EliteRxPresenter<V extends EliteView> extends ElitePresenter<V> {
     @UiThread
     @Override public void detachView() {
         if (subscriptionsAttachLifetime != null && !subscriptionsAttachLifetime.isUnsubscribed())
-            subscriptionsAttachLifetime.unsubscribe();
+            subscriptionsAttachLifetime.clear();
 
         super.detachView();
     }
@@ -68,7 +68,7 @@ public class EliteRxPresenter<V extends EliteView> extends ElitePresenter<V> {
      */
     @Override public void onDestroy() {
         if (subscriptionsAllLifetime != null && !subscriptionsAllLifetime.isUnsubscribed())
-            subscriptionsAllLifetime.unsubscribe();
+            subscriptionsAllLifetime.clear();
 
         super.onDestroy();
     }
