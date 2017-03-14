@@ -63,8 +63,8 @@ public class ActivityTwo extends AppCompatActivity implements ActivityTwoMvp.Vie
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {
                 try {
-                    presenter.calculateSum(Integer.valueOf(input1.getText().toString()),
-                            Integer.valueOf(input2.getText().toString()));
+                    presenter.calculateSum(Integer.parseInt(input1.getText().toString()),
+                            Integer.parseInt(input2.getText().toString()));
                 } catch (NumberFormatException e) {
                     e.printStackTrace();
                     Toast.makeText(ActivityTwo.this, "Number Exception", Toast.LENGTH_SHORT).show();

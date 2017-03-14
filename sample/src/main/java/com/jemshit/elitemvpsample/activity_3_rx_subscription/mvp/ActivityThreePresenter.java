@@ -26,7 +26,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 public class ActivityThreePresenter extends ActivityThreeMvp.Presenter {
-    private Random randomGenerator;
+    private final Random randomGenerator;
 
     public ActivityThreePresenter() {
         super.onCreate();

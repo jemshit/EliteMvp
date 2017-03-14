@@ -63,8 +63,8 @@ public class ActivityOne extends AppCompatActivity implements ActivityOneMvp.Vie
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {
                 try {
-                    presenter.calculateSum(Integer.valueOf(input1.getText().toString()),
-                            Integer.valueOf(input2.getText().toString()));
+                    presenter.calculateSum(Integer.parseInt(input1.getText().toString()),
+                            Integer.parseInt(input2.getText().toString()));
                 } catch (NumberFormatException e) {
                     e.printStackTrace();
                     Toast.makeText(ActivityOne.this, "Number Exception", Toast.LENGTH_SHORT).show();

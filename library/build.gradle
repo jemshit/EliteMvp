@@ -16,6 +16,11 @@
  */
 
 apply plugin: 'com.android.library'
+// Static code analysis
+apply from: "$project.rootDir/tools/script-lint.gradle"
+apply from: "$project.rootDir/tools/script-findbug.gradle"
+apply from: "$project.rootDir/tools/script-pmd.gradle"
+
 // For Jitpack
 apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.jemshit'
@@ -44,8 +49,9 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:appcompat-v7:25.2.0'
     compile 'io.reactivex:rxjava:1.2.4'
+    provided 'com.google.code.findbugs:annotations:3.0.1'
 }
 
 // For Jitpack

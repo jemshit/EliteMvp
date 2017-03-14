@@ -1,0 +1,9 @@
+// https://hackernoon.com/configuring-android-project-static-code-analysis-tools-b6dd83282921#.x4vdp9z0w
+android {
+    lintOptions {
+        lintConfig file("$project.rootDir/tools/rules-lint.xml")
+        htmlOutput file("$project.rootDir/outputs/reports/lint-$project.name .html")
+        warningsAsErrors true
+        xmlReport false
+    }
+}

@@ -29,14 +29,10 @@ import com.jemshit.elitemvpsample.activity_3_rx_subscription.mvp.ActivityThreeMv
 import com.jemshit.elitemvpsample.activity_3_rx_subscription.mvp.ActivityThreePresenter;
 
 public class ActivityThree extends AppCompatActivity implements ActivityThreeMvp.View {
-    //region Resources
-    private AppCompatButton buttonGenerate;
-    private TextView textView;
-    //endregion
 
-    //region Variables
+    private TextView textView;
+
     private ActivityThreeMvp.Presenter presenter;
-    //endregion
 
     @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +44,7 @@ public class ActivityThree extends AppCompatActivity implements ActivityThreeMvp
 
         // FindViewByIds
         textView = (TextView) findViewById(R.id.textView_activityThree_list);
-        buttonGenerate = (AppCompatButton) findViewById(R.id.button_activityThree_generate);
+        AppCompatButton buttonGenerate = (AppCompatButton) findViewById(R.id.button_activityThree_generate);
 
         buttonGenerate.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {
@@ -57,11 +53,13 @@ public class ActivityThree extends AppCompatActivity implements ActivityThreeMvp
         });
     }
 
-    @Override public void showList(String item) {
-        textView.setText(textView.getText()+"\n"+item);
+    @Override @SuppressWarnings("SetTextI18n")
+    public void showList(String item) {
+        textView.setText(textView.getText() + "\n" + item);
     }
 
-    @Override protected void onDestroy() {
+    @Override
+    protected void onDestroy() {
         super.onDestroy();
         presenter.onDestroy();  // presenter.onDetach() is in presenter.onDestroy()
     }

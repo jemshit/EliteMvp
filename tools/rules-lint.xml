@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2017 Jemshit Iskanderov.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<lint>
+
+    <!-- Ignores issue: sharedPreferences.edit() is not followed by commit() or apply()-->
+    <issue id="CommitPrefEdits">
+        <ignore
+            path="src/main/java/com/pordiva/clean_template/data/manager/SharedPreferenceManager.java"/>
+    </issue>
+
+    <!-- Ignores issue: in manifest, if :allowBackup="true", then u must have :fullBackupContent="@xml/" -->
+    <issue id="AllowBackup" severity="informational"/>
+
+    <!-- Ignores issue: unused .xml files, colors, strings, dimens ... -->
+    <issue id="UnusedResources" severity="ignore"/>
+
+    <!-- Ignores issue: GoogleAppIndexing not found in manifest-->
+    <issue id="GoogleAppIndexingWarning" severity="informational"/>
+
+    <!-- Ignores issue: Avoid textSize smaller than 12sp-->
+    <issue id="SmallSp" severity="ignore"/>
+
+    <!-- Ignores issue: ContentDescription not found for ImageView, ImageButton for accessibility tools-->
+    <issue id="ContentDescription" severity="ignore"/>
+
+
+</lint>

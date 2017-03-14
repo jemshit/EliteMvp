@@ -1,0 +1,13 @@
+// https://hackernoon.com/configuring-android-project-static-code-analysis-tools-b6dd83282921#.x4vdp9z0w
+apply plugin: 'pmd'
+
+task pmd(type: Pmd) {
+    ruleSetFiles = files("$project.rootDir/tools/rules-pmd.xml")
+    source = fileTree('src/main/java/')
+
+    reports {
+        xml.enabled = false
+        html.enabled = true
+        html.destination = "$project.rootDir/outputs/reports/pmd-$project.name .html"
+    }
+}
