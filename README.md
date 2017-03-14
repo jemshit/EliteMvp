@@ -111,6 +111,6 @@ Step 2. Add the dependency to your module build.gradle file
 ```groovy
 dependencies {
     ...
-    compile 'com.jemshit.elitemvp:1.1.0'
+    compile 'com.jemshit.elitemvp:1.1.1'
 }
 ```
