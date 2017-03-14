@@ -27,13 +27,6 @@
     <exclude-pattern>.*/R.java</exclude-pattern>
     <exclude-pattern>.*/gen/.*</exclude-pattern>
 
-    <!-- for enabling unused private field apiService; -->
-    <!-- for disabling: apiService could be replace by local since used by only one method -->
-    <exclude-pattern>.*/AuthDataRepository.java</exclude-pattern>
-
-    <!-- This file only for showing example-->
-    <exclude-pattern>.*/DataBinder_Kampanyalar.java</exclude-pattern>
-
     <rule ref="rulesets/java/android.xml"/>
     <rule ref="rulesets/java/clone.xml"/>
     <rule ref="rulesets/java/finalizers.xml"/>

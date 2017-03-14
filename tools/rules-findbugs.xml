@@ -37,8 +37,4 @@
         <Bug pattern="ME_ENUM_FIELD_SETTER"/>
     </Match>
 
-    <!-- This class is just for showing example-->
-    <Match>
-        <Class name="com.pordiva.clean_template.presentation.ui.global.recycler_view.DataBinder_Kampanyalar"/>
-    </Match>
 </FindBugsFilter>
