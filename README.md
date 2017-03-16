@@ -1,6 +1,7 @@
 # EliteMVP
 
 [![](https://jitpack.io/v/com.jemshit/elitemvp.svg)](https://jitpack.io/#com.jemshit/elitemvp)
+<a href="http://www.methodscount.com/?lib=com.jemshit%3Aelitemvp%3A1.1.1"><img src="https://img.shields.io/badge/Methods and size- 22 | 18 KB-e91e63.svg"/></a>
 
 This is basic, tiny Android MVP library.
 
