@@ -17,10 +17,9 @@
 
 package com.jemshit.elitemvp;
 
+import android.support.annotation.CallSuper;
 import android.support.annotation.Nullable;
 import android.support.annotation.UiThread;
-
-import java.lang.ref.WeakReference;
 
 /**
  * Complete <b>presenter</b> class, which handles how to hold reference of {@link EliteView EliteView} instance with additional helper methods.
@@ -30,7 +29,7 @@ import java.lang.ref.WeakReference;
  */
 public class ElitePresenter<V extends EliteView> implements EliteCorePresenter<V> {
 
-    private WeakReference<V> viewRef;
+    private V view;
 
     /**
      * Should be called from {@link ElitePresenter ElitePresenter} constructor when it is created.
@@ -39,13 +38,13 @@ public class ElitePresenter<V extends EliteView> implements EliteCorePresenter<V
     }
 
     /**
-     * Attach {@link EliteView EliteView} instance to this <b>presenter</b>, as <b>WeakReference</b>
+     * Attach {@link EliteView EliteView} instance to this <b>presenter</b>
      *
      * @param view is instance of {@link EliteView EliteView}
      */
     @UiThread
     @Override public void attachView(V view) {
-        viewRef = new WeakReference<>(view);
+        this.view = view;
     }
 
     /**
@@ -56,7 +55,7 @@ public class ElitePresenter<V extends EliteView> implements EliteCorePresenter<V
      */
     @UiThread @Nullable
     protected V getView() {
-        return viewRef == null ? null : viewRef.get();
+        return view;
     }
 
     /**
@@ -66,7 +65,7 @@ public class ElitePresenter<V extends EliteView> implements EliteCorePresenter<V
      */
     @UiThread
     protected boolean isViewAttached() {
-        return viewRef != null && viewRef.get() != null;
+        return view != null;
     }
 
     /**
@@ -74,9 +73,8 @@ public class ElitePresenter<V extends EliteView> implements EliteCorePresenter<V
      */
     @UiThread
     @Override public void detachView() {
-        if (viewRef != null) {
-            viewRef.clear();
-            viewRef = null;
+        if (view != null) {
+            view = null;
         }
     }
 
@@ -84,6 +82,7 @@ public class ElitePresenter<V extends EliteView> implements EliteCorePresenter<V
      * Should be called when this presenter instance has to be destroyed. This method internally calls
      * {@link #detachView() detachView()}
      */
+    @CallSuper
     public void onDestroy() {
         detachView();
     }
