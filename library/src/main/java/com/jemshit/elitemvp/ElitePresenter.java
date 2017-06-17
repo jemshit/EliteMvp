@@ -42,7 +42,7 @@ public class ElitePresenter<V extends EliteView> implements EliteCorePresenter<V
      *
      * @param view is instance of {@link EliteView EliteView}
      */
-    @UiThread
+    @UiThread @CallSuper
     @Override public void attachView(V view) {
         this.view = view;
     }
@@ -71,7 +71,7 @@ public class ElitePresenter<V extends EliteView> implements EliteCorePresenter<V
     /**
      * Clears reference to {@link EliteView EliteView} instance if exists.
      */
-    @UiThread
+    @UiThread @CallSuper
     @Override public void detachView() {
         if (view != null) {
             view = null;

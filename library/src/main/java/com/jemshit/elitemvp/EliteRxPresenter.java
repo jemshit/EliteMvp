@@ -17,6 +17,7 @@
 
 package com.jemshit.elitemvp;
 
+import android.support.annotation.CallSuper;
 import android.support.annotation.UiThread;
 
 import rx.subscriptions.CompositeSubscription;
@@ -36,7 +37,8 @@ public class EliteRxPresenter<V extends EliteView> extends ElitePresenter<V> {
     /**
      * Creates <b>CompositeSubscription</b> that lives between onCreate() and {@link #onDestroy()}.
      */
-    @Override public void onCreate() {
+    @Override @CallSuper
+    public void onCreate() {
         super.onCreate();
         subscriptionsAllLifetime = new CompositeSubscription();
     }
@@ -45,8 +47,8 @@ public class EliteRxPresenter<V extends EliteView> extends ElitePresenter<V> {
      * Creates <b>CompositeSubscription</b> that lives between attachView(EliteView) and
      * {@link #detachView()}.
      */
-    @UiThread
-    @Override public void attachView(V view) {
+    @UiThread @Override @CallSuper
+    public void attachView(V view) {
         super.attachView(view);
         subscriptionsAttachLifetime = new CompositeSubscription();
     }
@@ -55,8 +57,8 @@ public class EliteRxPresenter<V extends EliteView> extends ElitePresenter<V> {
      * Unsubscribes from <b>CompositeSubscription</b> that lives between {@link #attachView(EliteView view) attachView()} and
      * detachView().
      */
-    @UiThread
-    @Override public void detachView() {
+    @UiThread @Override @CallSuper
+    public void detachView() {
         if (subscriptionsAttachLifetime != null && !subscriptionsAttachLifetime.isUnsubscribed())
             subscriptionsAttachLifetime.clear();
 
@@ -66,7 +68,8 @@ public class EliteRxPresenter<V extends EliteView> extends ElitePresenter<V> {
     /**
      * Unsubscribes from <b>CompositeSubscription</b> that lives between {@link #onCreate()} and onDestroy().
      */
-    @Override public void onDestroy() {
+    @Override @CallSuper
+    public void onDestroy() {
         if (subscriptionsAllLifetime != null && !subscriptionsAllLifetime.isUnsubscribed())
             subscriptionsAllLifetime.clear();
 
