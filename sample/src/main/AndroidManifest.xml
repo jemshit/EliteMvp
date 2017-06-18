@@ -1,30 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.jemshit.elitemvpsample">
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jemshit.elitemvpsample">
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:name=".SampleApplication"
         android:theme="@style/AppTheme">
 
         <activity
-            android:screenOrientation="portrait"
-            android:name="com.jemshit.elitemvpsample.activity_1_basic.ActivityOne">
+            android:name="com.jemshit.elitemvpsample.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
         <activity
-            android:screenOrientation="portrait"
-            android:name="com.jemshit.elitemvpsample.activity_2_custom_presenter.ActivityTwo">
-        </activity>
+            android:name="com.jemshit.elitemvpsample.sample_1_basic_presenter.Sample1Activity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
         <activity
-            android:screenOrientation="portrait"
-            android:name="com.jemshit.elitemvpsample.activity_3_rx_subscription.ActivityThree">
-        </activity>
+            android:name="com.jemshit.elitemvpsample.sample_2_custom_presenter.Sample2Activity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.jemshit.elitemvpsample.sample_3_rx1_subscription.Sample3Activity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.jemshit.elitemvpsample.sample_4_rx2_disposable.Sample4Activity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.jemshit.elitemvpsample.sample_5_nullview_presenter.Sample5Activity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.jemshit.elitemvpsample.sample_6_dagger_injection.Sample6Activity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
 
     </application>
 

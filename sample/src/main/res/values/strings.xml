@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">EliteMvp Sample</string>
+
+    <string name="example_basic">Basic ElitePresenter</string>
+    <string name="example_custom">Custom EliteCorePresenter</string>
+    <string name="example_rx1">RxJava 1 - EliteRx1Presenter</string>
+    <string name="example_rx2">RxJava 2 - EliteRx2Presenter</string>
+    <string name="example_null_view">Basic EliteNullViewPresenter</string>
+    <string name="example_dagger">Inject Presenter with Dagger</string>
+
 </resources>

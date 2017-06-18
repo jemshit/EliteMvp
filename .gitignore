@@ -35,16 +35,12 @@ Thumbs.db
 
 # Android Studio
 *.iml
-.idea
-.idea/workspace.xml - remove # and delete .idea if it better suit your needs.
-.idea/tasks.xml
-.idea/datasources.xml
-.idea/dataSources.ids
+.idea/*
+!.idea/copyright
 
 #NDK
 obj/
 
 /captures
-gradle
 
 outputs/
