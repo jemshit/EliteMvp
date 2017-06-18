@@ -33,3 +33,6 @@
 -keep class android.support.design.** { *; }
 -keep interface android.support.design.** { *; }
 -keep public class android.support.design.R$* { *; }
+
+### Dagger 2.11
+-dontwarn com.google.errorprone.annotations.*

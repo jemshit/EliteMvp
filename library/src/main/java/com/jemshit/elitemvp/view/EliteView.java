@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 Jemshit Iskanderov.
+ * Copyright (c) 2017 Jemshit Iskanderov.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,17 +15,10 @@
  *
  */
 
-package com.jemshit.elitemvpsample.activity_1_basic.mvp;
+package com.jemshit.elitemvp.view;
 
-import com.jemshit.elitemvp.ElitePresenter;
-import com.jemshit.elitemvp.EliteView;
-
-public interface ActivityOneMvp {
-    interface View extends EliteView{
-        void showSum(String sum);
-    }
-
-    abstract class Presenter extends ElitePresenter<ActivityOneMvp.View> {
-        public abstract void calculateSum(int input1, int input2);
-    }
+/**
+ * Base empty <b>View</b> class
+ */
+public interface EliteView {
 }

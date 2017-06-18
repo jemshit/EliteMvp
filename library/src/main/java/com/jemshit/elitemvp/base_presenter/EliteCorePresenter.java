@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 Jemshit Iskanderov.
+ * Copyright (c) 2017 Jemshit Iskanderov.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,19 +15,21 @@
  *
  */
 
-package com.jemshit.elitemvp;
+package com.jemshit.elitemvp.base_presenter;
 
 import android.support.annotation.UiThread;
 
+import com.jemshit.elitemvp.view.EliteView;
+
 /**
- * Base <b>presenter</b> interface with 2 methods
+ * Base <b>Presenter</b> interface with only <b>attachView(V)</b> and <b>detachView()</b>  methods
  *
- * @param <V> is instance of {@link EliteView EliteView}, which this <b>presenter</b> holds reference to
+ * @param <V> instance of {@link EliteView EliteView}
  */
 public interface EliteCorePresenter<V extends EliteView> {
 
     /**
-     * Attach {@link EliteView EliteView} instance to this <b>presenter</b>
+     * To attach {@link EliteView EliteView} instance to this <b>Presenter</b>
      *
      * @param view is instance of {@link EliteView EliteView}
      */
@@ -35,7 +37,7 @@ public interface EliteCorePresenter<V extends EliteView> {
     void attachView(V view);
 
     /**
-     * Detach {@link EliteView EliteView} from this <b>presenter</b>
+     * To detach {@link EliteView EliteView} instance from this <b>Presenter</b>
      */
     @UiThread
     void detachView();

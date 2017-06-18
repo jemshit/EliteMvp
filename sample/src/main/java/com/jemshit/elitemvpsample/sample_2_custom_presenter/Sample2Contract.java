@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 Jemshit Iskanderov.
+ * Copyright (c) 2017 Jemshit Iskanderov.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,17 +15,20 @@
  *
  */
 
-package com.jemshit.elitemvpsample.activity_3_rx_subscription.mvp;
+package com.jemshit.elitemvpsample.sample_2_custom_presenter;
 
-import com.jemshit.elitemvp.EliteRxPresenter;
-import com.jemshit.elitemvp.EliteView;
+import com.jemshit.elitemvp.base_presenter.EliteCorePresenter;
+import com.jemshit.elitemvp.view.EliteView;
 
-public interface ActivityThreeMvp {
+interface Sample2Contract {
+
+    // EliteView
     interface View extends EliteView {
-        void showList(String item);
+        void showSum(String sum);
     }
 
-    abstract class Presenter extends EliteRxPresenter<View> {
-        public abstract void createList();
+    // EliteCorePresenter
+    abstract class Presenter implements EliteCorePresenter<Sample2Contract.View> {
+        public abstract void calculateSum(int input1, int input2);
     }
 }

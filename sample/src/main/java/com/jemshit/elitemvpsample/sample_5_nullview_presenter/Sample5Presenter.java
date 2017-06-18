@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016 Jemshit Iskanderov.
+ * Copyright (c) 2017 Jemshit Iskanderov.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,23 +15,19 @@
  *
  */
 
-package com.jemshit.elitemvpsample.activity_1_basic.mvp;
+package com.jemshit.elitemvpsample.sample_5_nullview_presenter;
 
-public class ActivityOnePresenter extends ActivityOneMvp.Presenter{
+class Sample5Presenter extends Sample5Contract.Presenter {
 
-    // Constructor if needed
-    public ActivityOnePresenter(){
-        super.onCreate();   // You can also call this from Activity.onCreate()
+    // Required
+    Sample5Presenter(Class<Sample5Contract.View> viewType) {
+        super(viewType);
     }
 
     @Override public void calculateSum(int input1, int input2) {
-        if(isViewAttached())    // Check if View is attached
-            getView().showSum(String.valueOf(input1+input2));
+        // No Need for this control now
+        // if (isViewAttached())
+        getView().showSum(String.valueOf(input1 + input2));
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        // Clear your references, close your instances if needed ...
-    }
 }
