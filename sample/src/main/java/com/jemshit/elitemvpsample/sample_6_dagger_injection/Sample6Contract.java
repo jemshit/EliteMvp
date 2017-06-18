@@ -17,10 +17,10 @@
 
 package com.jemshit.elitemvpsample.sample_6_dagger_injection;
 
-import com.jemshit.elitemvp.base_presenter.ElitePresenter;
+import com.jemshit.elitemvp.null_view_presenter.EliteNullViewPresenter;
 import com.jemshit.elitemvp.view.EliteView;
 
-interface Sample6Contract {
+public interface Sample6Contract {
 
     // EliteView
     interface View extends EliteView {
@@ -28,7 +28,12 @@ interface Sample6Contract {
     }
 
     // ElitePresenter
-    abstract class Presenter extends ElitePresenter<View> {
+    abstract class Presenter extends EliteNullViewPresenter<View> {
+
+        public Presenter(Class<View> viewType) {
+            super(viewType);
+        }
+
         public abstract void calculateSum(int input1, int input2);
     }
 }

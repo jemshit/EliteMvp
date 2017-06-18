@@ -28,7 +28,7 @@ import dagger.android.AndroidInjector;
 import dagger.multibindings.IntoMap;
 
 @Module(subcomponents = {Sample6ActivityComponent.class})
-public abstract class AppScopeActivityModule {
+public abstract class AppScopeActivityBinder {
 
     @Binds @IntoMap @ActivityKey(Sample6Activity.class)
     abstract AndroidInjector.Factory<? extends Activity> bindYourActivityInjectorFactory(Sample6ActivityComponent.Builder builder);

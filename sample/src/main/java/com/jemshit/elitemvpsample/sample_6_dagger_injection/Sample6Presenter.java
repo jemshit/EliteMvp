@@ -17,11 +17,22 @@
 
 package com.jemshit.elitemvpsample.sample_6_dagger_injection;
 
-class Sample6Presenter extends Sample6Contract.Presenter {
+import com.jemshit.elitemvpsample.sample_6_dagger_injection.di.ActivityScope;
+
+import javax.inject.Inject;
+
+@ActivityScope
+public class Sample6Presenter extends Sample6Contract.Presenter {
+
+    @Inject
+    public Sample6Presenter(Class<Sample6Contract.View> viewType) {
+        super(viewType);
+    }
 
     @Override public void calculateSum(int input1, int input2) {
-        if (isViewAttached())
-            getView().showSum(String.valueOf(input1 + input2));
+        // No Need for this control now
+        // if (isViewAttached())
+        getView().showSum(String.valueOf(input1 + input2));
     }
 
 }

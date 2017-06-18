@@ -28,23 +28,28 @@ import android.widget.TextView;
 
 import com.jemshit.elitemvpsample.R;
 
+import javax.inject.Inject;
+
+import dagger.android.AndroidInjection;
+
 public class Sample6Activity extends AppCompatActivity implements Sample6Contract.View {
+
     private TextView textSum;
     private EditText input1;
     private EditText input2;
 
-    private Sample6Contract.Presenter presenter;
+    @Inject Sample6Contract.Presenter presenter;
 
     @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
+        AndroidInjection.inject(this);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sample_adder);
         if (getSupportActionBar() != null) {
-            getSupportActionBar().setTitle(getString(R.string.example_basic));
+            getSupportActionBar().setTitle(getString(R.string.example_dagger));
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        // Initialize Presenter
-        presenter = new Sample6Presenter();
         // Attach View to it
         presenter.attachView(this);
 
