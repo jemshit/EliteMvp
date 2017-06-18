@@ -1,4 +1,4 @@
-![Logo](https://github.com/jemshit/EliteMvp/tree/master/files/elite_mvp_name.png)
+![Logo](https://raw.githubusercontent.com/jemshit/EliteMvp/master/files/https://raw.githubusercontent.com/jemshit/EliteMvp/master/files/elite_mvp_name.png)
 
 :zap: **Simple, Tiny, Extendable** Android MVP library. No complex Base Activity, Base Fragment or Base View. Just base Presenters and View interface for you to extend from. For MVP Cheatsheet <a href="https://github.com/jemshit/EliteMvp/tree/master/files/mvp_cheatsheet.pdf">read this.</a>
 
@@ -39,7 +39,7 @@ There are 5 base Presenter classes to extend from and 1 base View interface.
 
 UML Diagram:
 
-![Uml](https://github.com/jemshit/EliteMvp/tree/master/files/uml.png)
+![Uml](https://raw.githubusercontent.com/jemshit/EliteMvp/master/files/uml.png)
 
 
 ### Usage
