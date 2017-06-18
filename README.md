@@ -1,9 +1,9 @@
-<img src="https://github.com/jemshit/EliteMvp/tree/master/files/elite_mvp_name.png"/>
+![Logo](https://github.com/jemshit/EliteMvp/tree/master/files/elite_mvp_name.png)
 
 :zap: **Simple, Tiny, Extendable** Android MVP library. No complex Base Activity, Base Fragment or Base View. Just base Presenters and View interface for you to extend from. For MVP Cheatsheet <a href="https://github.com/jemshit/EliteMvp/tree/master/files/mvp_cheatsheet.pdf">read this.</a>
 
 [![](https://jitpack.io/v/com.jemshit/elitemvp.svg)](https://jitpack.io/#com.jemshit/elitemvp)
-<a href="http://www.methodscount.com/?lib=com.jemshit%3Aelitemvp%3A12.0.0"><img src="https://img.shields.io/badge/Methods and size- 22 | 18 KB-e91e63.svg"/></a>
+
 
 
 ### Installation
@@ -21,7 +21,7 @@ Step 2. Add library dependency to your module **build.gradle** file
 ```groovy
 dependencies {
     ...
-    compile 'com.jemshit.EliteMvp:2.0.0'
+    compile 'com.jemshit.EliteMvp:2.0.1'
 }
 ```
 
@@ -39,7 +39,7 @@ There are 5 base Presenter classes to extend from and 1 base View interface.
 
 UML Diagram:
 
-<img src="https://github.com/jemshit/EliteMvp/tree/master/files/uml.png"/>
+![Uml](https://github.com/jemshit/EliteMvp/tree/master/files/uml.png)
 
 
 ### Usage
