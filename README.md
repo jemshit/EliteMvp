@@ -1,6 +1,6 @@
-<img src="https://github.com/jemshit/EliteMvp/files/elite_mvp_name.png"/>
+<img src="https://github.com/jemshit/EliteMvp/tree/master/files/elite_mvp_name.png"/>
 
-:zap: **Simple, Tiny, Extendable** Android MVP library. No complex Base Activity, Base Fragment or Base View. Just base Presenters and View interface for you to extend from. For MVP Cheatsheet <a href="https://github.com/jemshit/EliteMvp/files/mvp_cheatsheet.pdf">read this.</a>
+:zap: **Simple, Tiny, Extendable** Android MVP library. No complex Base Activity, Base Fragment or Base View. Just base Presenters and View interface for you to extend from. For MVP Cheatsheet <a href="https://github.com/jemshit/EliteMvp/tree/master/files/mvp_cheatsheet.pdf">read this.</a>
 
 [![](https://jitpack.io/v/com.jemshit/elitemvp.svg)](https://jitpack.io/#com.jemshit/elitemvp)
 <a href="http://www.methodscount.com/?lib=com.jemshit%3Aelitemvp%3A12.0.0"><img src="https://img.shields.io/badge/Methods and size- 22 | 18 KB-e91e63.svg"/></a>
@@ -39,7 +39,7 @@ There are 5 base Presenter classes to extend from and 1 base View interface.
 
 UML Diagram:
 
-<img src="https://github.com/jemshit/EliteMvp/files/uml.png"/>
+<img src="https://github.com/jemshit/EliteMvp/tree/master/files/uml.png"/>
 
 
 ### Usage
@@ -92,4 +92,4 @@ public class YourActivity extends AppCompatActivity implements YourActivityContr
 :o: Check <a href="https://github.com/jemshit/EliteMvp/tree/master/sample/src/main/java/com/jemshit/elitemvpsample">Samples</a> for more examples.
 
 
-:o: For Orientation Change, Presenter Retaining, Caching... check applied solutions from community <a href="https://github.com/jemshit/EliteMvp/files/mvp_cheatsheet.pdf">here</a>
+:o: For Orientation Change, Presenter Retaining, Caching... check applied solutions from community <a href="https://github.com/jemshit/EliteMvp/tree/master/files/mvp_cheatsheet.pdf">here</a>
