@@ -30,6 +30,7 @@ import com.jemshit.elitemvpsample.sample_3_rx1_subscription.Sample3Activity;
 import com.jemshit.elitemvpsample.sample_4_rx2_disposable.Sample4Activity;
 import com.jemshit.elitemvpsample.sample_5_nullview_presenter.Sample5Activity;
 import com.jemshit.elitemvpsample.sample_6_dagger_injection.Sample6Activity;
+import com.jemshit.elitemvpsample.sample_7_nullview_rx1_presenter.Sample7Activity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonS4;
     private Button buttonS5;
     private Button buttonS6;
+    private Button buttonS7;
 
     @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         buttonS4 = (Button) findViewById(R.id.button_mainActivity_s4);
         buttonS5 = (Button) findViewById(R.id.button_mainActivity_s5);
         buttonS6 = (Button) findViewById(R.id.button_mainActivity_s6);
+        buttonS7 = (Button) findViewById(R.id.button_mainActivity_s7);
     }
 
     private void setClickListeners() {
@@ -96,6 +99,12 @@ public class MainActivity extends AppCompatActivity {
         buttonS6.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, Sample6Activity.class));
+            }
+        });
+
+        buttonS7.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Sample7Activity.class));
             }
         });
     }

@@ -7,5 +7,6 @@
     <string name="example_rx2">RxJava 2 - EliteRx2Presenter</string>
     <string name="example_null_view">Basic EliteNullViewPresenter</string>
     <string name="example_dagger">Inject Presenter with Dagger</string>
+    <string name="example_null_view_rx1">RxJava 1 - EliteNullViewRx1Presenter</string>
 
 </resources>

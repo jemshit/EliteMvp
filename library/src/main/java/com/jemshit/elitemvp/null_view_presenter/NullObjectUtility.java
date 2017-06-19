@@ -29,7 +29,7 @@ import static java.util.Collections.unmodifiableMap;
 /**
  * Utility class for creating <b>No Operation Class</b> with empty methods
  */
-final class NullObjectUtility {
+public final class NullObjectUtility {
 
     private static final InvocationHandler invocationHandlerDefaults = new DefaultValueInvocationHandler();
     private static final Map<Class<?>, Object> DEFAULTS =
@@ -57,7 +57,7 @@ final class NullObjectUtility {
      * @param interfaceClass Empty Class to be created with NoOp methods
      */
     @SuppressWarnings("unchecked")
-    static <T> T getNoOpObject(Class<T> interfaceClass) {
+    public static <T> T getNoOpObject(Class<T> interfaceClass) {
         return (T) newProxyInstance(
                 interfaceClass.getClassLoader(),
                 new Class[]{interfaceClass},

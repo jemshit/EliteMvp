@@ -94,6 +94,17 @@
             android:textAllCaps="false"
             android:textColor="@android:color/white"/>
 
+        <Button
+            android:id="@+id/button_mainActivity_s7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="start|center_vertical"
+            android:minWidth="240dp"
+            android:text="@string/example_null_view_rx1"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"/>
+
 
     </LinearLayout>
 </ScrollView>

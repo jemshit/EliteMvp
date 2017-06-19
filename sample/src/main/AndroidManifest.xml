@@ -4,11 +4,11 @@
     package="com.jemshit.elitemvpsample">
 
     <application
+        android:name=".SampleApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:name=".SampleApplication"
         android:theme="@style/AppTheme">
 
         <activity
@@ -45,6 +45,11 @@
 
         <activity
             android:name="com.jemshit.elitemvpsample.sample_6_dagger_injection.Sample6Activity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.jemshit.elitemvpsample.sample_7_nullview_rx1_presenter.Sample7Activity"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"/>
 
