@@ -21,13 +21,13 @@ Step 2. Add library dependency to your module **build.gradle** file
 ```groovy
 dependencies {
     ...
-    compile 'com.jemshit.EliteMvp:2.0.1'
+    compile 'com.jemshit.EliteMvp:2.0.2'
 }
 ```
 
 ### Structure
 
-There are 5 base Presenter classes to extend from and 1 base View interface.
+There are 7 base Presenter classes to extend from and 1 base View interface.
 
 - **EliteView:** empty View interface. Your custom View interfaces must extend this.
 - **EliteCorePresenter:** Presenter interface with only 2  methods (`attachView(V)`,`detachView()`). Your custom Presenter can implement this or you can use one of the ready Presenters listed below.
@@ -35,6 +35,8 @@ There are 5 base Presenter classes to extend from and 1 base View interface.
 - **EliteRx1Presenter:** Simple Presenter that has 2 additional methods (`addToOnAttachSubscriptions(s)`, `addToOnCreateSubscriptions(S)`) for adding RxJava 1 `Subscription`s into `CompositeSubscription`.
 - **EliteRx2Presenter:** Simple Presenter that has 2 additional methods (`addToOnAttachDisposables(D)`, `addToOnCreateDisposables(D)`) for adding RxJava 2 `Disposable`s into `CompositeDisposable`.
 - **EliteNullViewPresenter:** Presenter which returns empty View after View is detached, so no need for `view!=null` check. Returned empty View methods does nothing when called, read more about <a href="https://en.wikipedia.org/wiki/Null_Object_pattern">Null Object Pattern here.</a>
+- **EliteNullViewRx1Presenter:** Presenter which follows <a href="https://en.wikipedia.org/wiki/Null_Object_pattern">Null Object Pattern</a> and has two `CompositeSubscription`s for RxJava 1 `Subscription`s.
+- **EliteNullViewRx2Presenter:** Presenter which follows <a href="https://en.wikipedia.org/wiki/Null_Object_pattern">Null Object Pattern</a> and has two `CompositeDisposable`s for RxJava 2 `Disposable`s.
 
 
 UML Diagram:
