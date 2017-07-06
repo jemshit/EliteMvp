@@ -21,7 +21,7 @@ Step 2. Add library dependency to your module **build.gradle** file
 ```groovy
 dependencies {
     ...
-    compile 'com.jemshit.EliteMvp:2.0.2'
+    compile 'com.jemshit:EliteMvp:2.0.2'
 }
 ```
 
