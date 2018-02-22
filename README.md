@@ -1,6 +1,6 @@
 ![Logo](https://raw.githubusercontent.com/jemshit/EliteMvp/master/files/elite_mvp_name.png)
 
-:zap: **Simple, Tiny, Extendable** Android MVP library. No complex Base Activity, Base Fragment or Base View. Just base Presenters and View interface for you to extend from. For MVP Cheatsheet <a href="https://github.com/jemshit/EliteMvp/tree/master/files/mvp_cheatsheet.pdf">read this.</a>
+:zap: **Simple, Tiny, Extendable** Android MVP library. No complex Base Activity, Base Fragment or Base View. Just base Presenters and View interface for you to extend from. For MVP Cheatsheet <a href="https://github.com/jemshit/android_architecture_notes/blob/master/mvp_cheatsheet.md">read this.</a>
 
 [![](https://jitpack.io/v/com.jemshit/elitemvp.svg)](https://jitpack.io/#com.jemshit/elitemvp)
 
@@ -94,4 +94,4 @@ public class YourActivity extends AppCompatActivity implements YourActivityContr
 :o: Check <a href="https://github.com/jemshit/EliteMvp/tree/master/sample/src/main/java/com/jemshit/elitemvpsample">Samples</a> for more examples.
 
 
-:o: For Orientation Change, Presenter Retaining, Caching... check applied solutions from community <a href="https://github.com/jemshit/EliteMvp/tree/master/files/mvp_cheatsheet.pdf">here</a>
+:o: For Orientation Change, Presenter Retaining, Caching... check applied solutions from community <a href="https://github.com/jemshit/android_architecture_notes/blob/master/mvp_cheatsheet.md">here</a>
